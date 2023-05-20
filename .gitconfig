@@ -1,0 +1,12 @@
+[user]
+	name = Avinash Krishnan
+# [core]
+# 	autocrlf = true
+[branch]
+
+	# Show most recently changed branches first.
+	sort = -committerdate 
+[merge]
+
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
