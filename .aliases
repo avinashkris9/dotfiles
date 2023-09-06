@@ -1,3 +1,57 @@
+source <(kubectl completion zsh)
+
+if command kubecolor &>/dev/null; then
+  alias kubectl="kubecolor"
+  compdef kubecolor=kubectl
+fi
+
+#############################################################
+#  Kubernetes Alias
+##############################################################
+
+if command kubectl &>/dev/null; then
+
+  alias k='kubectl'
+  alias ka='kubectl apply '
+  alias ke='kubectl exec -it '
+  alias kd='kubectl describe '
+  alias kg='kubectl get '
+  alias kgp='kubectl get pods'
+fi
+
+kbash() {
+  kubectl exec it $1 bash
+}
+
+#############################################################
+#  Kubectx Alias
+##############################################################
+
+if command kubectx &>/dev/null; then
+  kubectx docker-desktop
+fi
+
+
+#############################################################
+#  Docker Alias
+##############################################################
+
+if command docker &>/dev/null; then
+
+  dp='docker ps -a'
+
+fi
+
+#############################################################
+#  Terraform Alias
+##############################################################
+
+if command terraform &>/dev/null; then
+
+  alias tf='terraform '
+
+fi
+
 #############################################################
 #  System Alias
 ##############################################################
@@ -44,45 +98,3 @@ alias gs='git status'
 alias gstl='git stash list'
 alias ga='git add'
 alias g=git
-
-#############################################################
-#  Docker Alias
-##############################################################
-
-if command docker &>/dev/null; then
-
-  dp='docker ps -a'
-
-fi
-
-#############################################################
-#  Kubernetes Alias
-##############################################################
-
-if command kubectl &>/dev/null; then
-
-  alias k='kubectl'
-  alias ka='kubectl apply '
-  alias ke='kubectl exec -it '
-  alias kd='kubectl describe '
-  alias kg='kubectl get '
-
-fi
-
-#############################################################
-#  Terraform Alias
-##############################################################
-
-if command terraform &>/dev/null; then
-
-  alias tf='terraform '
-
-fi
-
-#############################################################
-#  Directory Alias
-##############################################################
-
-alias GIT='cd /mnt/d/GIT'
-
-alias ME='Avinash Krishnan'

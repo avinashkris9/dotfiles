@@ -1,0 +1,47 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_brace_style = K &
+R
+charset = utf-8
+ij_smart_tabs = true
+
+[*.java]
+indent_size = 4
+ij_java_blank_lines_after_imports = true
+ij_java_block_brace_style = end_of_line
+ij_java_class_brace_style = end_of_line
+
+[*.groovy]
+indent_size = 4
+ij_groovy_if_brace_force = always
+ij_groovy_method_brace_style = end_of_line
+ij_groovy_lambda_brace_style = end_of_line
+
+[*.xml]
+indent_size = 4
+
+[Makefile]
+indent_style = tab
+
+[*.gradle]
+indent_size = 4
+
+[Jenkinsfile]
+indent_size = 2
+
+[*.py]
+indent_size = 4
+
+[*.{json,json5,yaml,yml}]
+indent_size=2
+
+[*.{md,mdx}]
+trim_trailing_whitespace=false
+
+[Makefile]
+indent_style=tab
