@@ -1,0 +1,65 @@
+##git config --global core.excludesFile '~/.gitignore_global'
+
+
+.vscode/
+
+# Windows
+Thumbs.db
+
+# WebStorm
+.idea/
+
+# vi
+*~
+
+# General
+log/
+*.log
+
+
+# Byte-compiled / optimized Python files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+.env
+
+# IDE-specific files (e.g., PyCharm, Visual Studio Code, etc.)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+*.pyc
+*.pyo
+*.cache/
+*.log
+
+# System or environment-specific files
+*.env
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Distribution / packaging
+/dist/
+/build/
+*.egg-info/
+*.egg
+
+# Local development files
+db.sqlite3
+
+# Log files
+*.log

@@ -24,9 +24,9 @@ if ! [[ -f "kube-ps1.sh" ]]; then
 fi
 
 info "Copying Git Config"
-cp -pr $BASEDIR/.gitconfig ~/.gitconfig
-info "Copying Git Ignore"
-cp -pr $BASEDIR/.gitignore ~/.gitignore
+
+
+
 
 if [ "$INSTALL_VSCODE_EXTS" = true ]; then
   info "Install VSCode Extensions"
@@ -38,3 +38,6 @@ fi
 ln -nfs $BASEDIR/.editorconfig ~/.editorconfig
 ln -nfs $BASEDIR/.vimrc ~/.vimrc
 ln -nfs $BASEDIR/starship.toml ~/.config/starship.toml
+ln -nfs $BASEDIR/.gitignore_global ~/.gitignore
+ln -nfs $BASEDIR/.gitconfig ~/.gitconfig
+exec zsh

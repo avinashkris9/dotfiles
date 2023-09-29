@@ -28,7 +28,7 @@ kbash() {
 ##############################################################
 
 if command kubectx &>/dev/null; then
-  kubectx docker-desktop
+  alias kxd="kubectx docker-desktop"
 fi
 
 
