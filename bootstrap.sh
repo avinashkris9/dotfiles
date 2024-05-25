@@ -3,37 +3,31 @@
 readonly VSCODE_EXTENSIONS_FILE="vscode-extensions.txt"
 readonly INSTALL_VSCODE_EXTS=false
 
+DOTFILES=$(dirname "$(realpath -s "$0")")
 
-BASEDIR=$(dirname "$0")
-printf "\r\033[2K \033[00;32m Setting Up\033[0m \n"
-
-info () {
+log() {
   printf "\r  [\033[00;36m Step\033[0m] $1\n"
 }
-
-start="$(date +%s)"
 
 # ln -sv "~/.dotfiles/runcom/.bash_profile" ~
 # Update Prompt to show Kubernetes Cluster . Thanks to @jonmosco
 
-if ! [[ -f "kube-ps1.sh" ]]; then
-    sh -c "curl https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh" >kube-ps1.sh
-    
+# if ! [[ -f "kube-ps1.sh" ]]; then
+#     sh -c "curl https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh" >kube-ps1.sh
+
+# fi
+
+if [ "$INSTALL_VSCODE_EXTS" = true ]; then
+  log "Install VSCode Extensions"
+  cat "${DOTFILES}/${VSCODE_EXTENSIONS_FILE}" | while read -r extension || [[ -n $extension ]]; do
+    code --install-extension "${extension}" --force
+  done
 fi
 
-info "Copying Git Config"
-cp -pr $BASEDIR/.gitconfig ~/.gitconfig
-info "Copying Git Ignore"
-cp -pr $BASEDIR/.gitignore ~/.gitignore
-
-
-if [ "$INSTALL_VSCODE_EXTS" = true ] ; then
-  info "Install VSCode Extensions"
-  cat $BASEDIR/$VSCODE_EXTENSIONS_FILE | while read extension || [[ -n $extension ]];
-do
-  code --install-extension $extension --force
-done
-fi
-
-ln -nf ~/.dotfiles/.editorconfig ~/.editorconfig 
-ln -nf $BASEDIR/.vimrc ~/.vimrc
+ln -svf "${DOTFILES}"/.vimrc ~/.vimrc
+ln -svf "${DOTFILES}"/.editorconfig ~/.editorconfig
+ln -svf "${DOTFILES}"/.gitconfig ~/.gitconfig
+ln -svf "${DOTFILES}"/.gitignore ~/.gitignore
+ln -svf "${DOTFILES}"/.profile ~/.profile
+ln -svf "${DOTFILES}"/.zprofile ~/.zprofile
+ln -svf "${DOTFILES}"/.bash_profle ~/.bash_profle

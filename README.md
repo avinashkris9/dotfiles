@@ -11,19 +11,14 @@ Personal dotfile repo copied from various sources. See https://github.com/mathia
 
 # Installation
 
-- Clone the repo
-- Createa symlink
-
-```bash
- ln -s /mnt/d/GIT/dotfiles ~/.dotfiles
-```
-- Execute bootstap script
+1. Clone the repo
+2. Execute bootstap script
 
 ```bash
 cd ~/.dotfiles
 bash bootstrap.sh
-
 ```
+
 
 # Customisation
 
@@ -46,5 +41,13 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 Use https://draculatheme.com 
 
 
+## Should have utilities
+
+- `fzf`
+- `zoxide`
+- `rg`
+- `jq`
 
 
+
+It's so ugly tbh!

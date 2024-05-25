@@ -15,3 +15,5 @@ Thumbs.db
 
 kube-ps1.sh
 .extras
+
+.vscode/

@@ -1,6 +1,0 @@
-# Make vim the default editor.
-export EDITOR='vim'
-
-source "${DOTFILES}"/.extras
-source "${DOTFILES}"/.aliases
-source ~/.credentials/.credentials

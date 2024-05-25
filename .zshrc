@@ -1,3 +1,7 @@
+#############################################################
+# This aint replacement of zshrc. Poorly named file that need to be included in .zshrc
+##############################################################
+
 # Path to your dotfiles installation.
 export DOTFILES=$HOME/.dotfiles
 

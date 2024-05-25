@@ -1,0 +1,16 @@
+brew 'git'
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+brew 'findutils'
+brew 'coreutils'
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew 'gnu-sed --with-default-names'
+brew 'bash'
+brew 'bash-completion2'
+brew 'grep'
+brew 'openssh'
+brew 'screen'
+brew 'jq'
+brew 'fzf'
+brew 'tree'
+brew 'ripgrep'
+brew 'kubectx'
