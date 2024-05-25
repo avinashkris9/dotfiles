@@ -1,21 +1,28 @@
 [user]
-	name = Avinash Krishnan
-	email = avinashkris9@gmail.com
+name = Avinash Krishnan
 # [core]
 # 	autocrlf = true
 [branch]
 
-	# Show most recently changed branches first.
-	sort = -committerdate 
+# Show most recently changed branches first.
+sort = -committerdate
 [merge]
 
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+# Include summaries of merged commits in newly created merge commit messages
+log = true
+
 [core]
 
-	# Use custom `.gitignore` and `.gitattributes`.
-	excludesfile = ~/.gitignore
-[credential]
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
-[init]
-	defaultBranch = main
+exlcludesfile=~/.gitignore
+
+[coloum]
+ui=auto
+
+[rebase]
+updateRefs=true
+
+[alias]
+
+fpush = "push --force-with-lease"
+which=!git branch | grep -i
+lucky= !git checkout $(git which $i -m1)

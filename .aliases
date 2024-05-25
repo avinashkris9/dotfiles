@@ -1,13 +1,21 @@
-source <(kubectl completion zsh)
+#############################################################
+#  Docker Alias
+##############################################################
 
+if command docker &>/dev/null; then
+
+  alias dp='docker ps -a'
+
+fi
+#############################################################
+#  Kubernetes Alias
+##############################################################
+
+source <(kubectl completion zsh)
 if command kubecolor &>/dev/null; then
   alias kubectl="kubecolor"
   compdef kubecolor=kubectl
 fi
-
-#############################################################
-#  Kubernetes Alias
-##############################################################
 
 if command kubectl &>/dev/null; then
 
@@ -19,28 +27,15 @@ if command kubectl &>/dev/null; then
   alias kgp='kubectl get pods'
 fi
 
+if command kubectx &>/dev/null; then
+
+  alias kx='kubectx'
+  alias kxd='kubectx docker-desktop'
+fi
+
 kbash() {
   kubectl exec it $1 bash
 }
-
-#############################################################
-#  Kubectx Alias
-##############################################################
-
-if command kubectx &>/dev/null; then
-  alias kxd="kubectx docker-desktop"
-fi
-
-
-#############################################################
-#  Docker Alias
-##############################################################
-
-if command docker &>/dev/null; then
-
-  dp='docker ps -a'
-
-fi
 
 #############################################################
 #  Terraform Alias
@@ -98,3 +93,5 @@ alias gs='git status'
 alias gstl='git stash list'
 alias ga='git add'
 alias g=git
+alias gc="git commit -m "
+alias gm="git checkout $(git_main_branch) && git pull"

@@ -1,8 +1,9 @@
 " .vimrc configuration 
 packadd! dracula
 syntax enable
-colorscheme dracula
 syntax on
+colorscheme dracula
+set clipboard=unnamed
 set autoindent					" When I go to newline keep same indentation         
 set expandtab
 set shiftwidth=2
